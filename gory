@@ -1,0 +1,27 @@
+/*
+lubi(X,Y) - X lubi Y
+bratniadusza(X,Y) X jest bratnia dusza Y
+*/
+
+lubi(jan,tatry).
+lubi(jan,beskidy).
+lubi(jerzy,beskidy).
+lubi(jerzy,bieszczady).
+lubi(adam,sudety).
+lubi(justyna,bieszczady).
+
+bratniadusza(X,Y):-lubi(X,G),lubi(Y,G),X\==Y.
+
+
+
+%program składa się z 7 klauzul
+%program składa się z 6 faktów
+%program składa się z 1 reguły
+%program składa się z 2 definicji relacji
+
+%lubi(jerzy,sudety)
+%lubi(jan,X)
+%lubi(X,bieszczady)
+%bratniadusza(jan,_)
+%bratniadusza(X,justyna)
+%bratniadusza(X,Y)
