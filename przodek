@@ -1,0 +1,16 @@
+/*
+rodzic(X,Y) - X jest rodzicem Y
+przodek(X,Y) - X jest przodkiem Y
+*/
+
+rodzic(ewa,ania).
+rodzic(piotr,ewa).
+przodek(X,Y):-rodzic(X,Y).
+przodek(X,Y):-rodzic(X,Z),przodek(Z,Y).
+
+/*
+4 klauzule
+2 fakty
+2 reguły
+2 definicje relacji
+*/
