@@ -1,0 +1,13 @@
+ojciec(karol,jan).
+ojciec(karol,adam).
+dziecko(tomasz,jan).
+dziecko(piotr,adam).
+dziadek(karol,marek).
+dziadek(X,Y):-ojciec(X,Z),dziecko(Y,Z).
+
+/*
+6 klauzul
+5 faktów
+1 reguła
+3 definicje relacji
+*/
