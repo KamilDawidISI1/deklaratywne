@@ -1,0 +1,13 @@
+p(a,d).
+p(X,Y):-q(X,Z),r(Z,Y)
+q(a,b).
+q(c,a).
+r(a,d).
+r(b,c).
+
+/*
+6 klauzul
+5 faktów
+1 reguła
+3 definicje relacji
+*/
