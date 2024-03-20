@@ -1,0 +1,71 @@
+%Rozpoznawanie wielomianów jednej zmiennej
+% o wypółczynnikach liczbowych
+
+/*
+Definicja: rekurencja strukturalna
+
+1) x jest wielomianem zmiennej x
+   c - liczba jest wielomianem dowolnej zmiennej
+
+2) Jeżeli W, W1, W2 są wielomianami zmiennej x, to
+   -W, W1+W2, W1-W2, W1*W2, W^N (N-liczba naturalna)
+   są wielomianami zmiennej x
+*/
+
+% wielomian(W,X)
+% spełniony, gdy W jest wielomianem zmiennej X
+% o współczynnikach liczbowych
+%definicja rekurencjna
+
+%warunek zakończenia rekurencji
+	wielomian(X,X).
+	wielomian(C,_):-number(C).
+
+%rekurencja
+	wielomian(-W,X):-wielomian(W,X).
+	wielomian(W1+W2,X):-wielomian(W1,X),wielomian(W2,X).
+	wielomian(W1-W2,X):-wielomian(W1,X),wielomian(W2,X).
+	wielomian(W1*W2,X):-wielomian(W1,X),wielomian(W2,X).
+	wielomian(W^N,X):-integer(N),N>1,wielomian(W,X).
+
+
+/*
+Sesja prologa
+
+?- wielomian(y,y).
+true ;
+false.
+
+?- wielomian(5,x).
+true.
+
+?- wielomian(5,y).
+true.
+
+?- wielomian(2*x,x).
+true ;
+false.
+
+?- wielomian(3*x+1,x).
+true ;
+false.
+
+?- wielomian(x^2,x).
+true ;
+false.
+
+?- wielomian(x^(-2),x).
+false.
+
+?- wielomian(3*x^2+x+1,x).
+true ;
+false.
+
+*/
+
+/*
+7 klauzul
+1 fakt
+6 reguł
+1 definicja relacji
+*/
