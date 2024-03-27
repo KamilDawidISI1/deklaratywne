@@ -1,0 +1,14 @@
+%lista_elem(L,N) - spelniony, gdy N jest liczbą elementów listy L.
+
+lista_elem([],0).
+
+%rekurencja
+
+lista_elem([H|T],N):- lista_elem(T,M), N is M+1. 
+
+/*
+2 klauzule
+1 fakt
+1 reguła
+1 definicja relacji 
+*/
